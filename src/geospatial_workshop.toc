@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {french}
+\beamer@sectionintoc {1}{OSMnx}{3}{0}{1}
+\beamer@sectionintoc {2}{Clustering}{3}{0}{2}

@@ -1,0 +1,93 @@
+\documentclass[aspectratio=169]{beamer}
+
+
+%%% Style
+\include{intact_datalab_beamer_template}
+
+
+%%% Extensions utiles pour le français
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+%%% Extensions utiles pour les math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{mathtools}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%% Extensions pour les figures
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{tikz}
+
+%%% Bibliographie
+\usepackage{bibentry}
+
+%%% Informations sur la présentation
+\author{Your Name}
+\institute[Intact]{
+\small{Intact Data Lab} \\
+\textit{your.name@intact.net}
+}
+\title{Your Presentation Title}
+\date{November 16th, 2018}
+
+
+%%% Préférences (Propre au thème du DMS)
+\slidelogo
+\titlelogo
+%\titleimage{figures/deep_learning_v2.png}  % Image à afTficher sur la page titre
+\footlinetext{  % À utiliser surtout pour les congrès
+\insertshorttitle\quad\insertshortdate\quad\insertshortinstitute
+}
+
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
+\usepackage{ragged2e}
+
+
+%%% Début
+\begin{document}
+
+
+\begin{frame}[plain, t]
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Plan}
+  \tableofcontents
+\end{frame}
+
+
+%\showsubsection  % À utiliser surtout pour les cours
+
+\section{OSMnx}
+\section{Clustering}
+
+\section*{References}
+
+\begin{frame}[t,allowframebreaks]
+\setbeamertemplate{bibliography item}{[\theenumiv]}
+
+
+  \frametitle{References}
+  \nocite*
+  \bibliographystyle{siam}
+  \bibliography{references}
+ \end{frame}
+
+\end{document}

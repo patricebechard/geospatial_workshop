@@ -1,1 +1,4 @@
-Geolife_trajectories/Data/
+geolife_trajectories
+train.json
+valid.json
+test.json

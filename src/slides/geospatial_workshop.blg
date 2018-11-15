@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: geospatial_workshop.aux
+The style file: siam.bst
+Database file #1: references.bib
+Warning--empty journal in paszke2017automatic
+You've used 7 entries,
+            2030 wiz_defined-function locations,
+            544 strings with 5250 characters,
+and the built_in function-call counts, 3089 in all, are:
+= -- 290
+> -- 185
+< -- 0
++ -- 73
+- -- 66
+* -- 264
+:= -- 491
+add.period$ -- 7
+call.type$ -- 7
+change.case$ -- 53
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 121
+empty$ -- 189
+format.name$ -- 66
+if$ -- 636
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 7
+newline$ -- 24
+num.names$ -- 14
+pop$ -- 48
+preamble$ -- 1
+purify$ -- 46
+quote$ -- 0
+skip$ -- 108
+stack$ -- 0
+substring$ -- 195
+swap$ -- 54
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 28
+warning$ -- 1
+while$ -- 29
+width$ -- 8
+write$ -- 63
+(There was 1 warning)

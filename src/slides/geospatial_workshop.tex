@@ -25,16 +25,20 @@
 \usepackage{subfig}
 \usepackage{tikz}
 
+%%% for python scripts
+\usepackage{listings}
+\usepackage{verbatim}
+
 %%% Bibliographie
 \usepackage{bibentry}
 
 %%% Informations sur la présentation
-\author{Your Name}
+\author{Patrice B\'echard}
 \institute[Intact]{
 \small{Intact Data Lab} \\
-\textit{your.name@intact.net}
+\textit{patrice.bechard@intact.net}
 }
-\title{Your Presentation Title}
+\title{Data Science Road Network}
 \date{November 16th, 2018}
 
 
@@ -62,9 +66,30 @@
 %%% Début
 \begin{document}
 
+% Title page
 
 \begin{frame}[plain, t]
   \titlepage
+\end{frame}
+
+% Motivations
+
+\begin{frame}{Motivation}
+\centering
+{\Large Why is it an interesting problem?}
+\vspace{.5cm}
+
+\begin{itemize}
+    \item Lots of GPS data from users
+    \item May want to do things such as
+    \begin{itemize}
+        \item Find patterns in the driving habits of users
+        \item Detect dangerous road sections
+        \item Optimize fastest route based on traffic
+        \item ...
+    \end{itemize}
+\end{itemize}
+    
 \end{frame}
 
 
@@ -72,11 +97,157 @@
   \tableofcontents
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Open Street Map
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\showsubsection  % À utiliser surtout pour les cours
+\section{Open Street Map}
+\begin{frame}{Open Street Map (OSM) \cite{haklay2008openstreetmap}}
 
-\section{OSMnx}
-\section{Clustering}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	
+	\begin{itemize}
+		\item Open-source map maintained by users
+		\item Contains various informations about:
+		\begin{itemize}
+			\item road segments
+			\item intersections
+			\item landmarks
+			\item ...
+		\end{itemize}
+		\item Contains a routing engine similar to Google Maps 
+		\item \url{https://www.openstreetmap.org/}
+	\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.7\textwidth]{figures/osm_logo.png}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Open Street Map (OSM) \cite{haklay2008openstreetmap}}
+
+{\Large Example : Querying features nearby}
+\centering
+\includegraphics[width=0.85\textwidth]{figures/osm_query}
+
+\end{frame}
+
+\begin{frame}{Open Street Map (OSM) \cite{haklay2008openstreetmap}}
+
+{\Large Example : Find optimal route between two points}
+\centering
+\includegraphics[width=0.85\textwidth]{figures/osm_routing}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OSMnx
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Building and visualizing road networks with OSMnx}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+\begin{columns}
+\begin{column}{0.75\textwidth}
+	
+	\begin{itemize}
+		\item Open-source Python library
+		\item Represents the road network as a directed
+		\item Allows us to
+		\begin{itemize}
+			\item Create the road network of a given location
+			\item Visualize this network easily
+			\item Simplify the road network by removing non-intersection nodes
+			\item Compute statistics about the road network
+			\item Find the shortest path between two nodes of the graph
+			\item ...
+		\end{itemize}
+		\item \url{https://github.com/gboeing/osmnx}
+	\end{itemize}
+\end{column}
+\begin{column}{0.25\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.8\textwidth]{figures/osmnx_manhattan}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Creating the road network for Verdun}
+{\small \lstinputlisting[language=Python]{scripts/verdun_network.py}}
+\centering
+\includegraphics[height=4cm]{figures/verdun_network}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Creating the shape of the Island of Montreal}
+{\small \lstinputlisting[language=Python]{scripts/montreal_shape.py}}
+\centering
+\includegraphics[height=4cm]{figures/montreal_shape}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Finding the }
+{\small \lstinputlisting[language=Python]{scripts/graph_from_bbox.py}}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+\vspace{.3cm}
+{\Large Example : Computing statistics from the network}
+{\small \lstinputlisting[language=Python]{scripts/osmnx_stats.py}}
+\centering
+\verbatiminput{scripts/osmnx_stats_results.json}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large For more examples and things to do with OSMnx, check out these links :}
+\vspace{1cm}
+\begin{itemize}
+	\item \url{https://geoffboeing.com/2016/11/osmnx-python-street-networks/} (overview)
+	\item \url{https://osmnx.readthedocs.io/en/stable/} (documentation)
+	\item \url{https://github.com/gboeing/osmnx-examples/} (more examples)
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Origin Clustering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Finding hotspots in Beijing}
+
+\begin{frame}{Finding hotspots Beijing}
+    We can use trip origins and destinations to cluster where drivers tend to go while driving.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Destination Prediction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Predicting a driver's destination}
+
+\begin{frame}{Predicting a driver's destination}
+    We can predict the destination of a driver based on its origin time and place.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Geospatial Data Science at Intact
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{References}
 

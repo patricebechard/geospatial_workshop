@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{ashbrook2003using}
 {\sc D.~Ashbrook and T.~Starner}, {\em Using gps to learn significant locations
@@ -34,5 +34,20 @@
   M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, et~al.}, {\em
   Scikit-learn: Machine learning in python}, Journal of machine learning
   research, 12 (2011), pp.~2825--2830.
+
+\bibitem{zheng2008understanding}
+{\sc Y.~Zheng, Q.~Li, Y.~Chen, X.~Xie, and W.-Y. Ma}, {\em Understanding
+  mobility based on gps data}, in Proceedings of the 10th international
+  conference on Ubiquitous computing, ACM, 2008, pp.~312--321.
+
+\bibitem{zheng2010geolife}
+{\sc Y.~Zheng, X.~Xie, and W.-Y. Ma}, {\em Geolife: A collaborative social
+  networking service among user, location and trajectory.}, IEEE Data Eng.
+  Bull., 33 (2010), pp.~32--39.
+
+\bibitem{zheng2009mining}
+{\sc Y.~Zheng, L.~Zhang, X.~Xie, and W.-Y. Ma}, {\em Mining interesting
+  locations and travel sequences from gps trajectories}, in Proceedings of the
+  18th international conference on World wide web, ACM, 2009, pp.~791--800.
 
 \end{thebibliography}

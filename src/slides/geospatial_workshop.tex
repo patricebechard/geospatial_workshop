@@ -197,15 +197,26 @@
 
 \begin{frame}{OSMnx \cite{boeing2017osmnx}}
 
-{\Large Example : Finding the }
+{\Large Example : Creating a graph from a bounding box}
 {\small \lstinputlisting[language=Python]{scripts/graph_from_bbox.py}}
+\vspace{.5cm}
+{\Large Example : Creating a graph from a single coordinate}
+{\small \lstinputlisting[language=Python]{scripts/graph_from_point.py}}
+
+\end{frame}
 
 \begin{frame}{OSMnx \cite{boeing2017osmnx}}
-\vspace{.3cm}
-{\Large Example : Computing statistics from the network}
-{\small \lstinputlisting[language=Python]{scripts/osmnx_stats.py}}
+
+{\Large Example : Finding the shortest path between two locations}
+{\footnotesize \lstinputlisting[language=Python]{scripts/shortest_path.py}}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Finding the shortest path between two locations}
 \centering
-\verbatiminput{scripts/osmnx_stats_results.json}
+\includegraphics[width=0.5\textwidth]{figures/shortest_path}
 
 \end{frame}
 
@@ -222,13 +233,40 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GeoLife GPS Trajectories dataset
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{GeoLife GPS Trajectories Dataset}
+
+\begin{frame}{The GeoLife GPS Trajectories Dataset \cite{zheng2008understanding, zheng2010geolife, zheng2009mining}}
+
+Dataset containing GPS trajectories from 181 users mostly around Beijing, China.
+\begin{itemize}
+	\item \textbf{Number of unique trips} : 18,670
+	\item \textbf{Total distance} : 1,292,951 km
+	\item \textbf{Total duration} : 50,176 hours
+\end{itemize}
+\vspace{.5cm}
+For a full overview of the dataset :
+\begin{itemize}
+	\item \url{https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/User20Guide-1.2.pdf}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Origin Clustering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Finding hotspots in Beijing}
 
-\begin{frame}{Finding hotspots Beijing}
-    We can use trip origins and destinations to cluster where drivers tend to go while driving.
+\begin{frame}{Finding hotspots in Beijing}
+We can use trip origins and destinations to find the hotspots in the Beijing.
+
+\begin{itemize}
+	\item We use the GeoLife GPS Trajectories Dataset.
+	\item We use the clustering algorithms from the \textit{Scikit-Learn} python library\cite{pedregosa2011scikit}.
+\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -238,7 +276,11 @@
 \section{Predicting a driver's destination}
 
 \begin{frame}{Predicting a driver's destination}
-    We can predict the destination of a driver based on its origin time and place.
+We can predict the destination of a driver based on its origin time and place.
+
+\begin{itemize}
+	
+\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -207,6 +207,14 @@
 
 \begin{frame}{OSMnx \cite{boeing2017osmnx}}
 
+{\Large Example : Compute statistics about the network}
+{\small \lstinputlisting[language=Python]{scripts/osmnx_stats.py}}
+{\small \verbatiminput{scripts/osmnx_stats_results.json}}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
 {\Large Example : Finding the shortest path between two locations}
 {\footnotesize \lstinputlisting[language=Python]{scripts/shortest_path.py}}
 
@@ -261,7 +269,7 @@ For a full overview of the dataset :
 \section{Finding hotspots in Beijing}
 
 \begin{frame}{Finding hotspots in Beijing}
-We can use trip origins and destinations to find the hotspots in the Beijing.
+We can use trip origins and destinations to find the hotspots in Beijing.
 
 \begin{itemize}
 	\item We use the GeoLife GPS Trajectories Dataset.
@@ -269,23 +277,141 @@ We can use trip origins and destinations to find the hotspots in the Beijing.
 \end{itemize}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Destination Prediction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Finding hotspots in Beijing}
 
-\section{Predicting a driver's destination}
-
-\begin{frame}{Predicting a driver's destination}
-We can predict the destination of a driver based on its origin time and place.
+{\Large What is clustering?}
+\vspace{.5cm}
 
 \begin{itemize}
-	
+	\item Type of unsupervised learning problem
+	\item We try to find groups of data with similar properties.
+	\item In our case, we want to find data points that are close to each other.
+\end{itemize}
+\vspace{.5cm}
+
+We decide to use the \textbf{DBSCAN}\cite{ester1996density} algorithm for many reasons :
+\begin{itemize}
+	\item The clusters may have any arbitrary shape
+	\item No need to specify a number of clusters manually
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+
+{\Large \textbf{Task} : find the 10 largest clusters in our data and identify them}
+\vspace{.5cm}
+\\
+{\Large \textbf{To do}}:
+\begin{enumerate}
+	\item Cluster the data using the DBSCAN algorithm
+	\item Removing points not in the 10 largest clusters
+	\item Find the centroid of each cluster
+	\item Use reverse geocoding to find around what landmark are the clusters positioned
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{description}
+	\item [1.] Cluster the data using the DBSCAN algorithm
+\end{description}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+     \centering
+	\includegraphics[height=7.5cm]{figures/cluttered_map}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{description}
+	\item [2.] Removing points not in the 10 largest clusters
+\end{description}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+     \centering
+	\includegraphics[height=7.5cm]{figures/reduced_map}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{description}
+	\item [3.] Find the centroid of each cluster
+\end{description}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+     \centering
+	\includegraphics[height=7.5cm]{figures/annotated_map}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+\begin{center}
+\begin{description}
+	\item [4.] Use reverse geocoding to find around what landmark are the clusters positioned
+\end{description}
+{\small \verbatiminput{scripts/reverse_geocoding.txt}}
+\end{center}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+
+{\Large Possible improvements}
+\vspace{.5cm}
+\begin{itemize}
+	\item Make smaller clusters to improve reverse geocoding results
+	\item Find a way to find an actual landmark, not only the name of a street
+	\item Check if the clusters change depending on the hour of the day, the day of the week, ...
+	\item Use clusters to determine frequent locations of individuals
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Destination Prediction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Predicting a driver's destination}
+
+%\begin{frame}{Predicting a driver's destination}
+%We can try to predict a driver's destination based on the beginning of their trip.
+%\\
+%Many people have tried to tackle this problem with various degree of success \cite{de2015artificial, krumm2006predestination}.
+
+%\begin{itemize}
+%	\item hey
+%\end{itemize}
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Geospatial Data Science at Intact
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Geospatial Data Science at Intact}
+
+\begin{frame}{Geospatial Data Science at Intact}
+\begin{itemize}
+	\item The UBI (\textit{Usage Based Insurance}) team at Intact tries to better understand the behavior of users based on their driving habits.
+	\vspace{.5cm}
+	\item We deal with huge amounts of geospatial data in order to :
+	\begin{itemize}
+		\item Detect dangerous behavior on the road
+		\item Detect dangerous streets where accidents are more frequent
+		\item Help users improve their driving habits via a mobile app
+	\end{itemize}
+	\vspace{.5cm}
+	\item We are always looking for interns!
+\end{itemize}
+
+\centering
+\href{https://careers.intact.ca/ca/en/}{\includegraphics[width=.2\textwidth]{figures/intact_logo}}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % References

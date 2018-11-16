@@ -1,6 +1,32 @@
 import os
 import sys
 
+def download_data(download_url="https://download.microsoft.com/download/F/4/8/F4894AA5-FDBC-481E-9285-D5F8C4C4F039/Geolife%20Trajectories%201.3.zip",
+                  folder_name="geolife_trajectories"):
+    """
+    Parameters
+    ----------
+    download_url : string
+        url of Geolife dataset
+    folder_name : string
+        name of folder where the data will be stored
+    """
+    
+    import requests
+    import zipfile
+    import io
+    
+    # download data if does not exist yet
+    if not os.path.exists(os.path.join(os.getcwd(), folder_name)):
+        print("Downloading the dataset...")
+        r = requests.get(download_url)
+        z = zipfile.ZipFile(io.BytesIO(r.content))
+        z.extractall()
+        os.rename("Geolife Trajectories 1.3", folder_name)   
+        print("Done!")
+    else:
+        print("Data has already been downloaded!")
+
 def create_datasets(folder_name="geolife_trajectories",
                     long_lower=116.25, long_upper=116.5,
                     lat_lower=39.85, lat_upper=40.1):

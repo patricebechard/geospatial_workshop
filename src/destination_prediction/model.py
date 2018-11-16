@@ -6,7 +6,7 @@ from src.destination_prediction.utils import device
 
 class DestinationLSTM(nn.Module):
     
-    def __init__(self, hidden_size=128, num_layers=2):
+    def __init__(self, hidden_size=128, num_layers=1):
         super(DestinationLSTM, self).__init__()
         
         self.lstm = nn.LSTM(input_size=2, 
@@ -33,8 +33,10 @@ class DestinationLSTM(nn.Module):
         
         x, (self.hidden, self.cell) = self.lstm(x, (self.hidden, self.cell))
         
-        long = torch.tanh(self.long_regressor(x[-1]))
-        lat = torch.tanh(self.lat_regressor(x[-1]))
+        
+        
+        long = self.long_regressor(x[-1])
+        lat = self.lat_regressor(x[-1])
 
         return (lat, long)
 

@@ -196,17 +196,12 @@ def create_datasets(folder_name="geolife_trajectories",
             combined_dset.append((trajectory, target))
                 
     if standardize:
-        print("Standardizing the dataset...")
-        # standarizing longitudes and latitudes
+        # Instead of standardizing right away, we standardize on the fly. 
+        # this makes it easier to plot the trajectories on the maps
         mean_long = sum_longs / n_pts
         mean_lat = sum_lats / n_pts
         std_long = np.sqrt(sq_sum_longs / n_pts - mean_long * mean_long)
         std_lat = np.sqrt(sq_sum_lats / n_pts - mean_lat * mean_lat)
-
-        for i in range(len(combined_dset)):
-            for j in range(len(combined_dset[i][0])):
-                combined_dset[i][0][j][0] = (combined_dset[i][0][j][0] - mean_lat) / std_lat
-                combined_dset[i][0][j][1] = (combined_dset[i][0][j][1] - mean_long) / std_long
     
     # shuffle dataset
     np.random.shuffle(combined_dset)
@@ -230,6 +225,11 @@ def create_datasets(folder_name="geolife_trajectories",
     # saving valid set
     with open(os.path.join(os.getcwd(), folder_name, 'test.json'), 'w') as json_file:
         json.dump(convert_dset_to_json(test_dset), json_file)
+        
+    # saving mean and std info. Really important when comes the time to predict the output
+    with open(os.path.join(os.getcwd(), folder_name, 'mean_std.json'), 'w') as json_file:
+        json.dump({"mean_long": mean_long, "mean_lat": mean_lat,
+                   "std_long": std_long, "std_lat": std_lat}, json_file)
     
 def pad_batch(batch):
     # padding each trip with [0,0]

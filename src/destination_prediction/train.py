@@ -5,9 +5,7 @@ from torch import optim
 from src.destination_prediction.utils import device, haversine_np
 import numpy as np
 
-def train(model, train_set, valid_set=None, n_epochs=20, start_lr=1e-4, trip_frac=1.,
-          long_lower=116.25, long_upper=116.5, lat_lower=39.85, lat_upper=40.1,
-          lr_decay=True):
+def train(model, train_set, mean_std_data, valid_set=None, n_epochs=20, start_lr=1e-4, trip_frac=1.,lr_decay=True):
     
     train_loss_tracker = []
     eval_loss_tracker = []
@@ -20,7 +18,9 @@ def train(model, train_set, valid_set=None, n_epochs=20, start_lr=1e-4, trip_fra
             else:
                 # learning rate decays linearly
                 lr = (n_epochs - epoch)/n_epochs * start_lr
-        print("learning rate : %.6f" % lr)
+        else:
+            lr = start_lr
+#         print("learning rate : %.6f" % lr)
         
         optimizer = optim.Adam(model.parameters(), lr=lr)
         criterion = nn.MSELoss()
@@ -30,19 +30,22 @@ def train(model, train_set, valid_set=None, n_epochs=20, start_lr=1e-4, trip_fra
         
         for i, (inputs, targets) in enumerate(train_set):
             
-            # truncate trip to keep only beginning
-            inputs = inputs[:int(trip_frac*inputs.shape[0])]
-            
-            optimizer.zero_grad()
-            
             inputs = inputs.to(device)
             targets = targets.to(device)
             
+            # truncate trip to keep only beginning
+            inputs = inputs[:int(trip_frac*inputs.shape[0])]
+            
+            # standardize inputs and targets
+            inputs[:,:,0] = (inputs[:,:,0] - mean_std_data["mean_lat"]) / mean_std_data["std_lat"]
+            inputs[:,:,1] = (inputs[:,:,1] - mean_std_data["mean_long"]) / mean_std_data["std_long"]
+            
+            targets[:,0] = (targets[:,0] - mean_std_data["mean_lat"]) / mean_std_data["std_lat"]
+            targets[:,1] = (targets[:,1] - mean_std_data["mean_long"]) / mean_std_data["std_long"]
+                        
+            optimizer.zero_grad()
+            
             out_lat, out_long = model(inputs)
-
-            # re-scale output from [0,1] to the pre-defined bbox
-            out_lat = (out_lat * (lat_upper - lat_lower)) / 2 + lat_lower
-            out_long = (out_long * (long_upper - long_lower)) / 2 + long_lower
 
             loss = criterion(out_lat.squeeze(), targets[:,0])
             loss += criterion(out_lat.squeeze(), targets[:,1])
@@ -55,19 +58,29 @@ def train(model, train_set, valid_set=None, n_epochs=20, start_lr=1e-4, trip_fra
             
             out_lat = out_lat.squeeze().data.to('cpu').numpy()
             out_long = out_long.squeeze().data.to('cpu').numpy()
-            tgt_lat = targets[:,0].to('cpu').numpy()
-            tgt_long = targets[:,1].to('cpu').numpy()
+            tgt_lat = targets[:,0].squeeze().to('cpu').numpy()
+            tgt_long = targets[:,1].squeeze().to('cpu').numpy()
             
+            
+#             print(out_lat, out_long, tgt_lat, tgt_long)
+            
+            # un-standardize data
+            out_lat = out_lat * mean_std_data["std_lat"] + mean_std_data["mean_lat"]
+            out_long = out_long * mean_std_data["std_long"] + mean_std_data["mean_long"]
+            tgt_lat = tgt_lat * mean_std_data["std_lat"] + mean_std_data["mean_lat"]
+            tgt_long = tgt_long * mean_std_data["std_long"] + mean_std_data["mean_long"]
+            
+#             print(out_lat, out_long, tgt_lat, tgt_long)
+
             total_distance_error += np.sum(haversine_np(out_long, out_lat, tgt_long, tgt_lat))
         
         mean_distance_error = total_distance_error / n_pts
         
-        mean_valid_distance_error = evaluate(model, valid_set)
+        mean_valid_distance_error = evaluate(model, valid_set, mean_std_data, trip_frac=trip_frac)
             
-        print("Epoch %d ----- mean distance error : %.3f ----- mean valid distance error : %.3f" % (epoch, mean_distance_error, mean_valid_distance_error))
-            
+        print("Epoch %d ----- mean distance error : %.3f ----- mean valid distance error : %.3f" % (epoch, mean_distance_error, mean_valid_distance_error))            
         
-def evaluate(model, valid_set, long_lower=116.25, long_upper=116.5, lat_lower=39.85, lat_upper=40.1):
+def evaluate(model, valid_set, mean_std_data, trip_frac=1.):
         
     total_distance_error = 0
     n_pts = 0    
@@ -76,20 +89,32 @@ def evaluate(model, valid_set, long_lower=116.25, long_upper=116.5, lat_lower=39
         
         inputs = inputs.to(device)
         targets = targets.to(device)
+
+        # truncate trip to keep only beginning
+        inputs = inputs[:int(trip_frac*inputs.shape[0])]
+
+        # standardize inputs and targets
+        inputs[:,:,0] = (inputs[:,:,0] - mean_std_data["mean_lat"]) / mean_std_data["std_lat"]
+        inputs[:,:,1] = (inputs[:,:,1] - mean_std_data["mean_long"]) / mean_std_data["std_long"]
+
+        targets[:,0] = (targets[:,0] - mean_std_data["mean_lat"]) / mean_std_data["std_lat"]
+        targets[:,1] = (targets[:,1] - mean_std_data["mean_long"]) / mean_std_data["std_long"]
         
         out_lat, out_long = model(inputs)
-
-        # re-scale output from [0,1] to the pre-defined bbox
-        out_lat = (out_lat * (lat_upper - lat_lower)) / 2 + lat_lower
-        out_long = (out_long * (long_upper - long_lower)) / 2 + long_lower
 
         # compute mean distance error (km)
         n_pts += inputs.shape[1]
 
         out_lat = out_lat.squeeze().data.to('cpu').numpy()
         out_long = out_long.squeeze().data.to('cpu').numpy()
-        tgt_lat = targets[:,0].to('cpu').numpy()
-        tgt_long = targets[:,1].to('cpu').numpy()
+        tgt_lat = targets[:,0].squeeze().to('cpu').numpy()
+        tgt_long = targets[:,1].squeeze().to('cpu').numpy()
+
+        # un-standardize data
+        out_lat = out_lat * mean_std_data["std_lat"] + mean_std_data["mean_lat"]
+        out_long = out_long * mean_std_data["std_long"] + mean_std_data["mean_long"]
+        tgt_lat = tgt_lat * mean_std_data["std_lat"] + mean_std_data["mean_lat"]
+        tgt_long = tgt_long * mean_std_data["std_long"] + mean_std_data["mean_long"]
         
         total_distance_error += np.sum(haversine_np(out_long, out_lat, tgt_long, tgt_lat))
 

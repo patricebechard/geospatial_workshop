@@ -15,6 +15,11 @@
   {\em Artificial neural networks applied to taxi destination prediction},
   arXiv preprint arXiv:1508.00021,  (2015).
 
+\bibitem{ester1996density}
+{\sc M.~Ester, H.-P. Kriegel, J.~Sander, X.~Xu, et~al.}, {\em A density-based
+  algorithm for discovering clusters in large spatial databases with noise.},
+  in Kdd, vol.~96, 1996, pp.~226--231.
+
 \bibitem{haklay2008openstreetmap}
 {\sc M.~Haklay and P.~Weber}, {\em Openstreetmap: User-generated street maps},
   Ieee Pervas Comput, 7 (2008), pp.~12--18.

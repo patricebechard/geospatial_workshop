@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 NOV 2018 00:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 NOV 2018 14:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1407,7 +1407,7 @@ Package caption Info: End \AtBeginDocument code.
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 67.
  (./geospatial_workshop.nav)
-<figures/template/titlepage_background.pdf, id=33, 722.7pt x 451.6875pt>
+<figures/template/titlepage_background.pdf, id=37, 722.7pt x 451.6875pt>
 File: figures/template/titlepage_background.pdf Graphic file (type pdf)
 
 <use figures/template/titlepage_background.pdf>
@@ -1449,46 +1449,50 @@ LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
 ] (./geospatial_workshop.toc) [3
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 129.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 133.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<figures/osm_logo.png, id=100, 2007.5pt x 2007.5pt>
+<figures/osm_logo.png, id=106, 2007.5pt x 2007.5pt>
 File: figures/osm_logo.png Graphic file (type png)
  <use figures/osm_logo.png>
-Package pdftex.def Info: figures/osm_logo.png used on input line 129.
+Package pdftex.def Info: figures/osm_logo.png used on input line 133.
 (pdftex.def)             Requested size: 148.38048pt x 148.38113pt.
 
 [4
 
  <./figures/osm_logo.png>]
-<figures/osm_query.png, id=110, 1927.2pt x 927.465pt>
+<figures/osm_query.png, id=117, 1927.2pt x 927.465pt>
 File: figures/osm_query.png Graphic file (type png)
 
 <use figures/osm_query.png>
-Package pdftex.def Info: figures/osm_query.png used on input line 137.
+Package pdftex.def Info: figures/osm_query.png used on input line 141.
 (pdftex.def)             Requested size: 360.35675pt x 173.41809pt.
  [5
 
  <./figures/osm_query.png>]
-<figures/osm_routing.png, id=118, 1927.2pt x 924.45375pt>
+<figures/osm_routing.png, id=125, 1927.2pt x 924.45375pt>
 File: figures/osm_routing.png Graphic file (type png)
 
 <use figures/osm_routing.png>
-Package pdftex.def Info: figures/osm_routing.png used on input line 145.
+Package pdftex.def Info: figures/osm_routing.png used on input line 149.
 (pdftex.def)             Requested size: 360.35675pt x 172.85504pt.
  [6
 
  <./figures/osm_routing.png>]
-<figures/osmnx_manhattan.png, id=127, 214.8025pt x 454.69875pt>
+<figures/osmnx_manhattan.png, id=134, 214.8025pt x 454.69875pt>
 File: figures/osmnx_manhattan.png Graphic file (type png)
 
 <use figures/osmnx_manhattan.png>
-Package pdftex.def Info: figures/osmnx_manhattan.png used on input line 178.
+Package pdftex.def Info: figures/osmnx_manhattan.png used on input line 187.
 (pdftex.def)             Requested size: 84.78952pt x 179.48262pt.
- [7
+
+Overfull \vbox (15.08035pt too high) detected at line 187
+ []
+
+[7
 
  <./figures/osmnx_manhattan.png>]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1499,21 +1503,21 @@ Overfull \hbox (1.95317pt too wide) in paragraph at lines 2--3
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) <figures/verdun_network.png, id=136, 382.42876pt x 334.24875pt>
+) <figures/verdun_network.png, id=143, 382.42876pt x 334.24875pt>
 File: figures/verdun_network.png Graphic file (type png)
 
 <use figures/verdun_network.png>
-Package pdftex.def Info: figures/verdun_network.png used on input line 187.
+Package pdftex.def Info: figures/verdun_network.png used on input line 196.
 (pdftex.def)             Requested size: 130.21661pt x 113.81102pt.
  [8
 
  <./figures/verdun_network.png>]
 (./scripts/montreal_shape.py)
-<figures/montreal_shape.png, id=145, 340.27126pt x 205.76875pt>
+<figures/montreal_shape.png, id=152, 340.27126pt x 205.76875pt>
 File: figures/montreal_shape.png Graphic file (type png)
 
 <use figures/montreal_shape.png>
-Package pdftex.def Info: figures/montreal_shape.png used on input line 196.
+Package pdftex.def Info: figures/montreal_shape.png used on input line 205.
 (pdftex.def)             Requested size: 188.20377pt x 113.81102pt.
  [9
 
@@ -1532,11 +1536,11 @@ Overfull \hbox (3.30312pt too wide) in paragraph at lines 6--8
 
 ) [12
 
-] <figures/shortest_path.png, id=178, 418.56375pt x 326.21875pt>
+] <figures/shortest_path.png, id=185, 418.56375pt x 326.21875pt>
 File: figures/shortest_path.png Graphic file (type png)
 
 <use figures/shortest_path.png>
-Package pdftex.def Info: figures/shortest_path.png used on input line 229.
+Package pdftex.def Info: figures/shortest_path.png used on input line 238.
 (pdftex.def)             Requested size: 211.97304pt x 165.20457pt.
  [13
 
@@ -1552,40 +1556,40 @@ Package pdftex.def Info: figures/shortest_path.png used on input line 229.
 ] [18
 
 ]
-<figures/cluttered_map.png, id=229, 1356.06625pt x 1362.08875pt>
+<figures/cluttered_map.png, id=236, 1356.06625pt x 1362.08875pt>
 File: figures/cluttered_map.png Graphic file (type png)
 
 <use figures/cluttered_map.png>
-Package pdftex.def Info: figures/cluttered_map.png used on input line 325.
+Package pdftex.def Info: figures/cluttered_map.png used on input line 343.
 (pdftex.def)             Requested size: 212.44351pt x 213.39566pt.
 
-Overfull \vbox (12.93517pt too high) detected at line 325
+Overfull \vbox (12.93517pt too high) detected at line 343
  []
 
 [19
 
  <./figures/cluttered_map.png>]
-<figures/reduced_map.png, id=237, 1357.07pt x 1363.0925pt>
+<figures/reduced_map.png, id=244, 1357.07pt x 1363.0925pt>
 File: figures/reduced_map.png Graphic file (type png)
 
 <use figures/reduced_map.png>
-Package pdftex.def Info: figures/reduced_map.png used on input line 339.
+Package pdftex.def Info: figures/reduced_map.png used on input line 357.
 (pdftex.def)             Requested size: 212.4351pt x 213.39566pt.
 
-Overfull \vbox (12.93517pt too high) detected at line 339
+Overfull \vbox (12.93517pt too high) detected at line 357
  []
 
 [20
 
  <./figures/reduced_map.png>]
-<figures/annotated_map.png, id=244, 1361.085pt x 1367.1075pt>
+<figures/annotated_map.png, id=251, 1361.085pt x 1367.1075pt>
 File: figures/annotated_map.png Graphic file (type png)
 
 <use figures/annotated_map.png>
-Package pdftex.def Info: figures/annotated_map.png used on input line 353.
+Package pdftex.def Info: figures/annotated_map.png used on input line 371.
 (pdftex.def)             Requested size: 212.44055pt x 213.39566pt.
 
-Overfull \vbox (12.93517pt too high) detected at line 353
+Overfull \vbox (12.93517pt too high) detected at line 371
  []
 
 [21
@@ -1596,14 +1600,174 @@ File: scripts/reverse_geocoding.txt  (verbatim)
 
 ] [23
 
+] [24
+
 ]
-<figures/intact_logo.png, id=262, 250.9375pt x 109.40875pt>
+./geospatial_workshop.tex:428: Illegal parameter number in definition of \test.
+<to be read again> 
+                   n
+l.428 \end{frame}
+                 
+? 
+./geospatial_workshop.tex:428: Illegal parameter number in definition of \itera
+te.
+<to be read again> 
+                   n
+l.428 \end{frame}
+                 
+? 
+./geospatial_workshop.tex:428: Illegal parameter number in definition of \itera
+te.
+<to be read again> 
+                   n
+l.428 \end{frame}
+                 
+? 
+./geospatial_workshop.tex:428: Illegal parameter number in definition of \beame
+r@doifinframe.
+<to be read again> 
+                   n
+l.428 \end{frame}
+                 
+? 
+LaTeX Font Info:    Try loading font information for U+bbold on input line 428.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/bbold/Ubbold.fd)
+<figures/nn.png, id=276, 373.395pt x 298.61563pt>
+File: figures/nn.png Graphic file (type png)
+ <use figures/nn.png>
+Package pdftex.def Info: figures/nn.png used on input line 428.
+(pdftex.def)             Requested size: 142.31319pt x 113.81102pt.
+
+./geospatial_workshop.tex:428: Illegal parameter number in definition of \Hy@te
+mpa.
+<to be read again> 
+                   n
+l.428 \end{frame}
+                 
+? 
+./geospatial_workshop.tex:428: Illegal parameter number in definition of \Hy@te
+mpa.
+<to be read again> 
+                   n
+l.428 \end{frame}
+                 
+? 
+[25
+
+ <./figures/nn.png>] <figures/rnn.png, id=288, 797.98125pt x 320.19624pt>
+File: figures/rnn.png Graphic file (type png)
+
+<use figures/rnn.png>
+Package pdftex.def Info: figures/rnn.png used on input line 444.
+(pdftex.def)             Requested size: 254.37022pt x 102.06914pt.
+ [26
+
+ <./figures/rnn.png>]
+<figures/lstm.png, id=296, 465.23813pt x 173.89969pt>
+File: figures/lstm.png Graphic file (type png)
+ <use figures/lstm.png>
+Package pdftex.def Info: figures/lstm.png used on input line 458.
+(pdftex.def)             Requested size: 254.37022pt x 95.07991pt.
+
+[27
+
+ <./figures/lstm.png>] [28
+
+]
+<figures/ex1_reg.png, id=309, 173.89969pt x 94.10156pt>
+File: figures/ex1_reg.png Graphic file (type png)
+
+<use figures/ex1_reg.png>
+Package pdftex.def Info: figures/ex1_reg.png used on input line 476.
+(pdftex.def)             Requested size: 254.37022pt x 137.65276pt.
+ [29
+
+ <./figures/ex1_reg.png>]
+<figures/ex2_reg.png, id=316, 222.8325pt x 108.405pt>
+File: figures/ex2_reg.png Graphic file (type png)
+
+<use figures/ex2_reg.png>
+Package pdftex.def Info: figures/ex2_reg.png used on input line 481.
+(pdftex.def)             Requested size: 254.37022pt x 123.74838pt.
+ [30
+
+ <./figures/ex2_reg.png>]
+<figures/ex3_reg.png, id=323, 283.81032pt x 134.00063pt>
+File: figures/ex3_reg.png Graphic file (type png)
+
+<use figures/ex3_reg.png>
+Package pdftex.def Info: figures/ex3_reg.png used on input line 486.
+(pdftex.def)             Requested size: 254.37022pt x 120.10461pt.
+ [31
+
+ <./figures/ex3_reg.png>]
+<figures/ex4_reg.png, id=332, 540.51938pt x 440.39531pt>
+File: figures/ex4_reg.png Graphic file (type png)
+
+<use figures/ex4_reg.png>
+Package pdftex.def Info: figures/ex4_reg.png used on input line 491.
+(pdftex.def)             Requested size: 254.37022pt x 207.2479pt.
+
+Overfull \vbox (6.7874pt too high) detected at line 491
+ []
+
+[32
+
+ <./figures/ex4_reg.png>] [33
+
+] [34
+
+]
+<figures/ex1_clf.png, id=349, 175.40532pt x 92.59593pt>
+File: figures/ex1_clf.png Graphic file (type png)
+
+<use figures/ex1_clf.png>
+Package pdftex.def Info: figures/ex1_clf.png used on input line 519.
+(pdftex.def)             Requested size: 254.37022pt x 134.29172pt.
+ [35
+
+ <./figures/ex1_clf.png>]
+<figures/ex2_clf.png, id=356, 231.11343pt x 152.82094pt>
+File: figures/ex2_clf.png Graphic file (type png)
+
+<use figures/ex2_clf.png>
+Package pdftex.def Info: figures/ex2_clf.png used on input line 525.
+(pdftex.def)             Requested size: 254.37022pt x 168.20146pt.
+ [36
+
+ <./figures/ex2_clf.png>]
+<figures/ex3_clf.png, id=363, 283.0575pt x 135.50626pt>
+File: figures/ex3_clf.png Graphic file (type png)
+
+<use figures/ex3_clf.png>
+Package pdftex.def Info: figures/ex3_clf.png used on input line 531.
+(pdftex.def)             Requested size: 254.37022pt x 121.77666pt.
+ [37
+
+ <./figures/ex3_clf.png>]
+<figures/ex4_clf.png, id=371, 538.26094pt x 437.38406pt>
+File: figures/ex4_clf.png Graphic file (type png)
+
+<use figures/ex4_clf.png>
+Package pdftex.def Info: figures/ex4_clf.png used on input line 537.
+(pdftex.def)             Requested size: 254.37022pt x 206.69843pt.
+
+Overfull \vbox (6.23793pt too high) detected at line 537
+ []
+
+[38
+
+ <./figures/ex4_clf.png>] [39
+
+]
+<figures/intact_logo.png, id=384, 250.9375pt x 109.40875pt>
 File: figures/intact_logo.png Graphic file (type png)
 
 <use figures/intact_logo.png>
-Package pdftex.def Info: figures/intact_logo.png used on input line 414.
+Package pdftex.def Info: figures/intact_logo.png used on input line 574.
 (pdftex.def)             Requested size: 84.78792pt x 36.96808pt.
- [24
+ [40
 
  <./figures/intact_logo.png>]
 (./geospatial_workshop.bbl
@@ -1611,12 +1775,12 @@ Package pdftex.def Info: figures/intact_logo.png used on input line 414.
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' undefined
 (Font)              using `T1/cmss/m/n' instead on input line 4.
 
-) [25
+) [41
 
-] [26
+] [42
 
 
-] [27
+] [43
 
 
 ]
@@ -1629,13 +1793,13 @@ LaTeX Font Warning: Font shape `T1/cmss/m/sc' undefined
 \tf@snm=\write8
 \openout8 = `geospatial_workshop.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 592.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 592.
  (./geospatial_workshop.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 432.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 592.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 592.
 Package rerunfilecheck Info: File `geospatial_workshop.out' has not changed.
-(rerunfilecheck)             Checksum: 7C6B0AB7DC02A76A2049E0509D395F2C;331.
+(rerunfilecheck)             Checksum: 78DD7643593F938C736ACB69E9600D8C;399.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1644,41 +1808,45 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 432.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 592.
  ) 
 Here is how much of TeX's memory you used:
- 24882 strings out of 493089
- 468195 string characters out of 6134842
- 559925 words of memory out of 5000000
- 27690 multiletter control sequences out of 15000+600000
- 31345 words of font info for 83 fonts, out of 8000000 for 9000
+ 25027 strings out of 493089
+ 470308 string characters out of 6134842
+ 560620 words of memory out of 5000000
+ 27780 multiletter control sequences out of 15000+600000
+ 33415 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,17n,63p,399b,1314s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsi0900.pf
-b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on geospatial_workshop.pdf (27 pages, 10395302 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsi0900.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/cm-super/sfss1728.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on geospatial_workshop.pdf (43 pages, 12554985 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 512 PDF objects out of 1000 (max. 8388607)
+ 382 compressed objects within 4 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,7 @@
+\babel@toc {french}{}
+\beamer@sectionintoc {1}{Open Street Map}{4}{0}{1}
+\beamer@sectionintoc {2}{Construire et visualiser le r\IeC {\'e}seau routier avec OSMnx}{7}{0}{2}
+\beamer@sectionintoc {3}{GeoLife GPS Trajectories Dataset}{15}{0}{3}
+\beamer@sectionintoc {4}{Trouver les points d'int\IeC {\'e}r\IeC {\^e}t \IeC {\`a} Beijing}{16}{0}{4}
+\beamer@sectionintoc {5}{Pr\IeC {\'e}dire la destination d'un conducteur}{24}{0}{5}
+\beamer@sectionintoc {6}{Science des donn\IeC {\'e}es g\IeC {\'e}ospatiales chez Intact}{40}{0}{6}

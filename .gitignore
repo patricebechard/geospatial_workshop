@@ -2,3 +2,5 @@ geolife_trajectories
 train.json
 valid.json
 test.json
+
+*.DS_Store
